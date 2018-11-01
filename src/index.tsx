@@ -74,15 +74,13 @@ export interface PlaygroundProps {
   __codesandbox: string;
 }
 
-export const Identity: SFC<any> = ({ children }) => <Fragment>{children}</Fragment>;
-
 const isFn = (value: any): boolean => typeof value === 'function';
 
 const BasePlayground: SFC<PlaygroundProps> = ({
   components,
   className,
   style,
-  wrapper: Wrapper = Identity,
+  wrapper: Wrapper,
   children,
   variations,
   propsTable,
