@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SFC, Fragment, ComponentType as CT } from 'react';
+import { SFC, ComponentType as CT } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { withMDXComponents } from '@mdx-js/tag/dist/mdx-provider';
 import { PropDoc } from '@csod-oss/react-props-to-docs-ts/build/props-parser';
@@ -74,8 +74,6 @@ export interface PlaygroundProps {
   __codesandbox: string;
 }
 
-const isFn = (value: any): boolean => typeof value === 'function';
-
 const BasePlayground: SFC<PlaygroundProps> = ({
   components,
   className,
@@ -96,7 +94,7 @@ const BasePlayground: SFC<PlaygroundProps> = ({
       className={className}
       style={style}
       components={components}
-      component={<Wrapper>{isFn(children) ? children() : children}</Wrapper>}
+      component={Wrapper ? <Wrapper>{children}</Wrapper> : children}
       variations={variations}
       propsTable={propsTable}
       scope={__scope}
