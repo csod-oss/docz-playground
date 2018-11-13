@@ -1,6 +1,6 @@
 {
   "name": "@csod-oss/docz-playground",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom Docz Playground component",
   "main": "build/index.js",
   "scripts": {
